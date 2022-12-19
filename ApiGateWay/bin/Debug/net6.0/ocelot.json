@@ -1,0 +1,151 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7014"
+  },
+  "Routes": [
+    //Card settings
+    {
+      "UpstreamPathTemplate": "/gateway/card/CreateCard",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Card/CreateCard"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/card/GetCardById/{Id}",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Card/GetCardById/{Id}"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/card/GetCardByIssuerRef/{Id}",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Card/GetCardByIssuerRef/{Id}"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/card/GetPrintedCards/page/{pageSize}/{pageNumber}",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Card/GetPrintedCards/page/{pageSize}/{pageNumber}"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/card/GetUsedCardCount",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Card/GetUsedCardCount"
+    },
+    //Stock settings
+    {
+      "UpstreamPathTemplate": "/gateway/stock/AddStock",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Stock/AddStock"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/stock/GetCardStockCount",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Stock/GetCardStockCount"
+    },
+
+    {
+      "UpstreamPathTemplate": "/gateway/stock/GetCardStockCountBySupplier/{supplier}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Stock/GetCardStockCountBySupplier/{supplier}"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/stock/GetStockSummary",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7199
+        }
+      ],
+      "SwaggerKey": "card",
+      "DownstreamPathTemplate": "/api/Stock/GetStockSummary"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": ["name of scope"]
+      //}
+    }
+  ],
+  // Swagger Endpoint
+  "SwaggerEndPoints": [
+    {
+      "Key": "card",
+      "Config": [
+        {
+          "Name": "Card Service API",
+          "Version": "v1",
+          "Url": "https://localhost:7199/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
